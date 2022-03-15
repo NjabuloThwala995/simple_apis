@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Validator;
-use Config\Constants;
 
 class MathController extends Controller
 {
@@ -24,7 +23,7 @@ class MathController extends Controller
     {
         return Validator::Make($request->all(),
             [
-                'first_value' => 'numeric|required|min:9999999999|max:999999999999',
+                'first_value' => 'numeric|required|min:-9999999999|max:999999999999',
                 'second_value' => 'numeric|required|min:-9999999999|max:999999999999'
             ]);
     }
