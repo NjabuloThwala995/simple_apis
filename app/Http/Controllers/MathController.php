@@ -7,6 +7,15 @@ use Validator;
 
 class MathController extends Controller
 {
+    public function validateValues($request)
+    {
+        return Validator::Make($request->all(),
+            [
+                'first_value' => 'numeric|required|min:9999999999|max:999999999999',
+                'second_value' => 'numeric|required|min:-9999999999|max:999999999999'
+            ]);
+    }
+
     public function sum(Request $request)
     {
         $validated = $this->validateValues($request);
@@ -19,12 +28,12 @@ class MathController extends Controller
         return response()->json($value1 + $value2);
     }
 
-    public function validateValues($request)
+    public function difference(Request $request)
     {
-        return Validator::Make($request->all(),
-            [
-                'first_value' => 'numeric|required|min:-9999999999|max:999999999999',
-                'second_value' => 'numeric|required|min:-9999999999|max:999999999999'
-            ]);
+        $validated = $this->validateValues($request);
+
+        if ($validated->fails()) {
+            return response()->json($validated->errors());
+        }
     }
 }
