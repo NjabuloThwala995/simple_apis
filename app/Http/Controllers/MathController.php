@@ -23,8 +23,8 @@ class MathController extends Controller
     {
         return Validator::Make($request->all(),
             [
-                'first_value' => 'numeric|required',
-                'second_value' => 'numeric|required'
+                'first_value' => 'numeric|required|min:-9999999999|max:9999999999',
+                'second_value' => 'numeric|required|min:-9999999999|max:999999999999'
             ]);
     }
 }
