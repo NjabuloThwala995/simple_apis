@@ -11,7 +11,7 @@ class MathController extends Controller
     {
         return Validator::Make($request->all(),
             [
-                'first_value' => 'numeric|required|min:9999999999|max:999999999999',
+                'first_value' => 'numeric|required|min:-9999999999|max:999999999999',
                 'second_value' => 'numeric|required|min:-9999999999|max:999999999999'
             ]);
     }
@@ -35,5 +35,10 @@ class MathController extends Controller
         if ($validated->fails()) {
             return response()->json($validated->errors());
         }
+
+        $value1 = $request->first_value;
+        $value2 = $request->second_value;
+
+        return response()->json($value1 - $value2);
     }
 }
