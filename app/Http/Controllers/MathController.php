@@ -16,7 +16,6 @@ class MathController extends Controller
 
         $value1 = $request->first_value;
         $value2 = $request->second_value;
-        var_dump($value1 + $value2);
         return response()->json($value1 + $value2);
     }
 
