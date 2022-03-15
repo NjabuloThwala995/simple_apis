@@ -3,14 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\Integer;
+use Validator;
 
 class MathController extends Controller
 {
     public function add(Request $request)
     {
+        $validated = $this->validateValues($request);
+        if ($validated->fails()) {
+            return response()->json($validated->errors());
+        }
+
         $value1 = $request->first_value;
         $value2 = $request->second_value;
+        var_dump($value1 + $value2);
         return response()->json($value1 + $value2);
+    }
+
+    public function validateValues($request)
+    {
+        return Validator::Make($request->all(),
+            [
+                'first_value' => 'numeric|required',
+                'second_value' => 'numeric|required'
+            ]);
     }
 }
