@@ -18,4 +18,4 @@ use \App\Http\Controllers\MathController;
 Route::post('v1/math/add', [MathController::class, 'sum']);
 Route::post('v1/math/difference', [MathController::class, 'difference']);
 Route::post('v1/math/product', [MathController::class, 'product']);
-Route::post('v1/math/add', [MathController::class, 'quotient']);
+Route::post('v1/math/quotient', [MathController::class, 'quotient']);
