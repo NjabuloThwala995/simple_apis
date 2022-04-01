@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\MathController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('v1/math/add', [MathController::class, 'sum']);
+Route::post('v1/math/difference', [MathController::class, 'difference']);
+Route::post('v1/math/product', [MathController::class, 'product']);
+Route::post('v1/math/quotient', [MathController::class, 'quotient']);
