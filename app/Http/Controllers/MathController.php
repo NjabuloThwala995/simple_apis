@@ -48,4 +48,17 @@ class MathController extends Controller
 
         return response()->json($value1 - $value2);
     }
+
+    public function product(Request $request)
+    {
+        $validated = $this->validateValues($request);
+        if ($validated->fails()) {
+            return response()->json($validated->errors());
+        }
+
+        $value1 = $request->first_value;
+        $value2 = $request->second_value;
+
+        return response()->json($value1 * $value2);
+    }
 }
