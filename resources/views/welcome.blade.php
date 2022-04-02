@@ -12,12 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Righteous&display=swap"
           rel="stylesheet">
     <script src="https://kit.fontawesome.com/9ecd261fd1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="http://localhost:8000/css/app.css">
+{{--    <link rel="stylesheet" href="{{asset("/css/app.css")}}">--}}
 </head>
 <body>
 <header>
     <div>
-        <img class="header-img" src="http://localhost:8000/logo.png" width="50px" height="50px" alt="logo"/>
+        <img class="header-img" src={{asset("logo.png")}} width="50px" height="50px" alt="logo"/>
     </div>
     <div class="header-div-social">
         <div class="header-logo-div">
@@ -39,7 +39,80 @@
     </div>
 </header>
 <style>
+    body {
+        padding: 50px;
+        background-image: url('/back.jpeg');
+    }
 
+    header {
+        border-bottom: solid whitesmoke 5px;
+        padding-bottom: 15px;
+        display: flex;
+    }
+
+    .header-logo-div, .header-social-media-div {
+        display: inline-block;
+    }
+
+    .header-img {
+        border-radius: 200px;
+    }
+
+    .header-div-social {
+        margin-left: 10px;
+        width: 100%
+    }
+
+    .header-logo-div {
+        font-family: 'Righteous', cursive;
+        font-size: 2rem;
+        color: #f9a602;
+    }
+
+    .header-social-media-div {
+        float: right;
+    }
+
+    .header-social-li {
+        color: white;
+        display: inline-block;
+    }
+
+    li:not(:first-of-type) {
+        margin-left: 30px;
+    }
+
+    .body-welcome-strong {
+        color: #f9a602;
+    }
+
+    .welcome-strong-h1, .welcome-strong-h1-2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2rem;
+    }
+
+    .welcome-strong-h1-2 {
+        font-size: 5rem;
+    }
+
+    .body-welcome-div {
+        color: white;
+        text-align: center;
+        margin-top: 100px;
+        padding: 20px;
+    }
+
+    .display-inline-block {
+        display: inline-block;
+    }
+
+    .margin-0 {
+        margin: 0;
+    }
+
+    .margin-top-100 {
+        margin-top: 100px;
+    }
 </style>
 <div class="body-welcome-div">
     <div>
