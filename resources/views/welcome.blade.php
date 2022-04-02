@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Righteous&display=swap"
           rel="stylesheet">
     <script src="https://kit.fontawesome.com/9ecd261fd1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset("/css/app.css")}}">
 </head>
 <body>
 <header>
