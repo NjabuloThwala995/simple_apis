@@ -1,8 +1,7 @@
 
 body {
     padding: 50px;
-    background-image: url('http://localhost:8000/back.jpeg');
-}
+    background-image: url('../back.jpeg');
 
 header {
     border-bottom: solid whitesmoke 5px;
