@@ -12,12 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Righteous&display=swap"
           rel="stylesheet">
     <script src="https://kit.fontawesome.com/9ecd261fd1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="http://localhost:8000/css/app.css">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
 <header>
     <div>
-        <img class="header-img" src="http://localhost:8000/logo.png" width="50px" height="50px" alt="logo"/>
+        <img class="header-img" src={{asset("logo.png")}} width="50px" height="50px" alt="logo"/>
     </div>
     <div class="header-div-social">
         <div class="header-logo-div">
